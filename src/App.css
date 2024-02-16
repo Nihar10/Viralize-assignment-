@@ -36,13 +36,55 @@
     transform: rotate(360deg);
   }
 }
+/* App.css */
 
-.App {
-  font-family: sans-serif;
-  text-align: center;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
 }
 
-input {
-  margin: 10px;
-  padding: 5px;
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.game-list {
+  list-style: none;
+  padding: 0;
+}
+
+.game-item {
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.game-item strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.game-item p {
+  margin: 0;
 }

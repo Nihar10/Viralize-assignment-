@@ -1,3 +1,5 @@
+// App.js
+
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
@@ -36,12 +38,12 @@ function App() {
     }, []);
 
     const filteredGames = games.filter((game) => {
-        const playerNames = game.user.name.toLowerCase();
-        return playerNames.includes(searchTerm.toLowerCase());
+        const playerName = game.user.name.toLowerCase();
+        return playerName.includes(searchTerm.toLowerCase());
     });
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div className="loader">Loading...</div>;
     }
 
     if (error) {
@@ -49,23 +51,21 @@ function App() {
     }
 
     return (
-        <div className="App">
-            <h1>Live Games</h1>
+        <div className="container">
+            <h1 className="title">Live Games</h1>
             <input
                 type="text"
+                className="search-input"
                 placeholder="Search by player's name"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <ul>
+            <ul className="game-list">
                 {filteredGames.map((game, index) => (
-                    <li key={index}>
+                    <li key={index} className="game-item">
                         <strong>Game ID: {game.gameId}</strong>
-                        <ul>
-                            <li>
-                                Player: {game.user.name}, Status: {game.color}
-                            </li>
-                        </ul>
+                        <p>Player: {game.user.name}</p>
+                        <p>Status: {game.color}</p>
                     </li>
                 ))}
             </ul>
